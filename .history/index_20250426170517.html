@@ -6,47 +6,10 @@
     <title>Budgeteer</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    <!--
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script> 
-    -->
     <script src="./javascript.js" defer></script> 
-    <script>
-        function handleAddCategory() {
-          const categoriesDiv = document.getElementById('categories');
-          // keep a counter in the button’s dataset
-          const btn = document.getElementById('addCategory');
-          let count = parseInt(btn.dataset.count || '0', 10) + 1;
-          btn.dataset.count = count;
-    
-          // build the wrapper
-          const wrapper = document.createElement('div');
-          wrapper.className = 'category-wrapper';
-          wrapper.style.marginTop = '1em';
-    
-          // name
-          const nameLabel = document.createElement('label');
-          nameLabel.textContent = `Category ${count} Name: `;
-          const nameInput = document.createElement('input');
-          nameInput.type = 'text';
-          nameInput.name = 'customCategoryName[]';
-          nameInput.placeholder = 'Category name';
-    
-          // amount
-          const amountLabel = document.createElement('label');
-          amountLabel.textContent = ` Amount Spent (USD): `;
-          const amountInput = document.createElement('input');
-          amountInput.type = 'text';
-          amountInput.name = 'customCategoryAmount[]';
-          nameInput.placeholder = 'Category name';
-    
-          // assemble and append
-          wrapper.append(nameLabel, nameInput, amountLabel, amountInput);
-          categoriesDiv.appendChild(wrapper);
-        }
-      </script>
 
 </head>
-
 <body>
     <header>
         <h1>Budgeteer</h1>
@@ -95,19 +58,9 @@
                 <input type="text" id="health" placeholder="Monthly spending for health (gym, medecine, etc.)">
             </label>
 
-            <button
-            type="button"
-            id="addCategory"
-            data-count="0"
-            onclick="handleAddCategory()"
-          >
-            Add a category
-          </button>
-    
-          <div id="categories"></div>
+            <button type="button" id="addCategory">Add a category</button>
 
-
-            <button type="button" id="analyze">Analyze</button>
+            <button type="submit">Analyze</button>
         </form>
         <div class="output"></div>
     </main>
