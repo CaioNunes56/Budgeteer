@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body *{
+    margin: 0;
+    padding: 0;
+}
+
+.bodyfont{
+    font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke
+}
+
+header{
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+    background-color: #38302E;
+    padding: 20px;
+    
+}
+
+header h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 150px 50px 150px 50px;
+    background-color: #2E2E2E;
+    color: #F5F5F5;
+      font-family: 'IBM Plex Mono', monospace;
+      padding: 40px;
+}
+
+.basic-inputs *{
+    margin: 15px;
+}
+/*CHECKBOX STYLING*/
+label.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1em;
+    user-select: none;
+  }
+
+  /* Hide the native checkbox */
+  .custom-checkbox input[type="checkbox"] {
+    display: none;
+  }
+
+  /* Custom checkbox style */
+  .custom-checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: #444;
+    border: 2px solid #999;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+
+  /* Checked state */
+  .custom-checkbox input:checked + .checkmark {
+    background-color: #4CAF50; /* Green noir check */
+    border-color: #4CAF50;
+  }
+
+  /* Checkmark icon */
+  .custom-checkbox input:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Optional hover effect */
+  .custom-checkbox:hover .checkmark {
+    border-color: #ccc;
+  }
+

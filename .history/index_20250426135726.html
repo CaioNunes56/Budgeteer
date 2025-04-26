@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeteer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <h1>Budgeteer.com</h1>
+    </header>
+    <main>
+        <div class="mainbox">
+            <form class="basic-inputs">
+
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Sam Spade">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="detective@noirmail.com">
+
+                <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Subscribe to weekly cases.
+                </label>
+
+                <label for="savings">Monthly Savings Goal</label>
+                <input type="range" id="savings" name="savings" min="0" max="100">
+
+                <button type="submit">Submit Case File</button>
+
+            </form>
+        </div>
+    </main>
+</body>
+</html>

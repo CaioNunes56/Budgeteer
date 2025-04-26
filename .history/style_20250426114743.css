@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+body *{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+    background-color: #2E2E2E;
+    padding: 20px;
+    
+}
+
+header h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 50px 150px 50px;
+}
+
