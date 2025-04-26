@@ -11,12 +11,9 @@
 -->
     
     <script src="./javascript.js" defer></script> 
-<<<<<<< HEAD
     <script src="./budgeteer.js" defer></script>
-=======
-
->>>>>>> 1f6bb7f5f7e857a7efa9cca62d1ac1f21abf5504
     <script>
+        // define a global function
         function handleAddCategory() {
           const categoriesDiv = document.getElementById('categories');
           // keep a counter in the button’s dataset
@@ -44,16 +41,6 @@
           amountInput.type = 'text';
           amountInput.name = 'customCategoryAmount[]';
           nameInput.placeholder = 'Category name';
-
-              // delete button
-        const deleteBtn = document.createElement('button');
-        deleteBtn.type = 'button';
-        deleteBtn.textContent = 'Delete';
-        deleteBtn.style.marginLeft = '0.5em';
-        deleteBtn.addEventListener('click', () => {
-        wrapper.remove();
-        // optional: re-number remaining categories if you like
-        });
     
           // assemble and append
           wrapper.append(nameLabel, nameInput, amountLabel, amountInput);
@@ -119,6 +106,8 @@
           >
             Add a category
           </button>
+    
+          <div id="categories"></div>
 
             <button type="button" id="analyze">Analyze</button>
         </form>
