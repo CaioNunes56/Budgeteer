@@ -92,9 +92,17 @@
                 <input type="text" id="health" placeholder="Monthly spending for health (gym, medecine, etc.)">
             </label>
 
-            <button type="button" id="addCategory">Add a category</button>
+            <button
+            type="button"
+            id="addCategory"
+            data-count="0"
+            onclick="handleAddCategory()"
+          >
+            Add a category
+          </button>
+    
+          <div id="categories"></div>
 
-            <div id="categories"></div>
 
             <button type="submit">Analyze</button>
         </form>
