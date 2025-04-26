@@ -1,14 +1,8 @@
-html, body{
-    height: 100%;
-    margin: 0;
-}
-
 body{
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     height: 100%;
 }
 
@@ -40,7 +34,6 @@ main{
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    height: 100%;
     padding: 150px 50px 150px 50px;
     background-color: #2E2E2E;
     color: #F5F5F5;

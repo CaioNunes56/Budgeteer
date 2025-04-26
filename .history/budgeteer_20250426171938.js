@@ -1,7 +1,6 @@
-console.log("JavaScript is working!");
+console.log("Hello from JS!");
 
 document.addEventListener('DOMContentLoaded', () => {
-
     const analyzeBudgetButton = document.getElementById('analyze');
 
     analyzeBudgetButton.addEventListener('click', async (event) => {

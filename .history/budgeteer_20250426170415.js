@@ -1,14 +1,10 @@
-console.log("JavaScript is working!");
-
 document.addEventListener('DOMContentLoaded', () => {
-
     const analyzeBudgetButton = document.getElementById('analyze');
 
-    analyzeBudgetButton.addEventListener('click', async (event) => {
-        event.preventDefault();
-        
+    analyzeBudgetButton.addEventListener('click', async () => {
         const budgetData = {};
 
+        // Need to change for the actual values/names.
         const housingAmount = document.getElementById('housing');
         const foodAmount = document.getElementById('groceries');
         const childCareAmount = document.getElementById('childcare');
