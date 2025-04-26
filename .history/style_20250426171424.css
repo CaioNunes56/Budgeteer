@@ -68,8 +68,8 @@ input[type="text"]{
 
 input[type="text"]:focus
 {
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px #4CAF50;
+    border-color: #320E3B;
+    box-shadow: 0 0 5px #320E3B;
     outline: none;
 }
 /*Checkbox input styling*/
