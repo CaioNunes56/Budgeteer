@@ -1,5 +1,4 @@
 console.log("✅ javascript.js has been loaded!");
-console.log("HELOOOOO");
 
 let auth0Client = null;
 

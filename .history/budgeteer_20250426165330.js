@@ -1,14 +1,10 @@
-console.log("JavaScript is working!");
-
 document.addEventListener('DOMContentLoaded', () => {
+    const analyseBudgetButton = document.getElementById('???');
 
-    const analyzeBudgetButton = document.getElementById('analyze');
-
-    analyzeBudgetButton.addEventListener('click', async (event) => {
-        event.preventDefault();
-        
+    analyseBudgetButton.addEventListener('click', async () => {
         const budgetData = {};
 
+        // Need to change for the actual values/names.
         const housingAmount = document.getElementById('housing');
         const foodAmount = document.getElementById('groceries');
         const childCareAmount = document.getElementById('childcare');
@@ -16,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const savingsAmount = document.getElementById('savings');
         const healthcareAmount = document.getElementById('health');
 
-        budgetData['housing'] = parseFloat(housingAmount.value);
-        budgetData['groceries'] = parseFloat(foodAmount.value);
-        budgetData['childcare'] = parseFloat(childCareAmount.value);
-        budgetData['diningOut'] = parseFloat(leisureAmount.value);
-        budgetData['savings'] = parseFloat(savingsAmount.value);
-        budgetData['health'] = parseFloat(healthcareAmount.value);
+        budgetData['???'] = parseFloat(foodAmount.value);
+        budgetData['???'] = parseFloat(housingAmount.value);
+        budgetData['???'] = parseFloat(childCareAmount.value);
+        budgetData['???'] = parseFloat(leisureAmount.value);
+        budgetData['???'] = parseFloat(savingsAmount.value);
+        budgetData['???'] = parseFloat(healthcareAmount.value);
 
         const stringToSend = `What is the total when all the values in this budget: ${JSON.stringify(budgetData)} are added up to each other?
         Give me two financial advices about this budget (How can I lower my expenses (Do that only for the highest value category), how can I better balance everything out)`;
@@ -35,14 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const answer = await fetch(apiURL, {
             method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dataSent)
-        });
-
-        const responseData = await answer.json();
-        console.log(responseData);
+        })
     })
 })

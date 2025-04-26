@@ -1,14 +1,10 @@
-console.log("JavaScript is working!");
-
 document.addEventListener('DOMContentLoaded', () => {
-
     const analyzeBudgetButton = document.getElementById('analyze');
 
-    analyzeBudgetButton.addEventListener('click', async (event) => {
-        event.preventDefault();
-        
+    analyzeBudgetButton.addEventListener('click', async () => {
         const budgetData = {};
 
+        // Need to change for the actual values/names.
         const housingAmount = document.getElementById('housing');
         const foodAmount = document.getElementById('groceries');
         const childCareAmount = document.getElementById('childcare');
@@ -35,14 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const answer = await fetch(apiURL, {
             method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dataSent)
-        });
-
-        const responseData = await answer.json();
-        console.log(responseData);
+        })
     })
 })
