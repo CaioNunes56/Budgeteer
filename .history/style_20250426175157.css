@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body *{
+    margin: 0;
+    padding: 0;
+    color: #F5F5F5;
+}
+
+header{
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+    background-color: #1C1C1C;
+    
+    
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    font-size: 2.5em;
+}
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 150px 50px 150px 50px;
+    background-color: #2E2E2E;
+    color: #F5F5F5;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 40px;
+}
+
+main form{
+    max-width: 700px;
+}
+
+/*Custom form styles*/
+label {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.05em;
+}
+
+/*Text input styling*/
+input[type="text"]{
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 8px;
+    background-color: #1C1C1C;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: #F5F5F5;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus
+{
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+    outline: none;
+}
+/*Checkbox input styling*/
+label.customCheck {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.customCheck input[type="checkbox"] {
+    display: none;
+}
+
+.customCheck .checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: #444;
+    border: 2px solid #999;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.customCheck input:checked + .checkmark {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.customCheck input:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+button{
+    margin-top: 30px;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #F5F5F5;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #4CAF50;
+    box-shadow: 0 0 8px #4CAF50;
+    color: #000;
+}
+
+button #addcategory{
+    display:block; 
+    background-color: #1C1C1C ;
+    color: #F5F5F5;
+}
+
+
+
