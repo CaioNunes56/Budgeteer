@@ -7,7 +7,7 @@ async function configureClient() {
     domain: "dev-mwel3gbeogijpxg8.us.auth0.com",
     clientId: "kXOjAmfXWIboql8iXLsO2X1sbjFD7mjT",
     authorizationParams: {
-      redirect_uri: window.location.origin + "/"
+      redirect_uri: window.location.origin + window.location.pathname
     }
   });
   console.log("✅ Auth0 client created");
