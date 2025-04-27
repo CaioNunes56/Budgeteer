@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function parseAIOutputDynamic(output) {
-  const lines = outputt.trim().split('\n');
+  const lines = output.trim().split('\n');
   const data = {};
   let currentCategory = null;
 
