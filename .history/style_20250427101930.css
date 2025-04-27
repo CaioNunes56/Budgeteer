@@ -308,6 +308,6 @@ ul li *{
   width: 100px;
 }
 
-#ProfileText p{
+#ProfileText {
     cursor: pointer;
 }
