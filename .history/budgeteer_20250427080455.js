@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     I will be using you to provide advice concerning budget allocation decisions. Please write everything in plain text, without using markdown. There will be values sent with extra options names and their values, include those as well. Here are the questions:
     What is the total for all the values in this budget: ${JSON.stringify(budgetData)}?
     For each category, provide a bool value indicating if the user is managing his money well (true) or if it needs some improvement(false) (the value should be under the header)
-    For each category where the bool is true, Explain why they are doing good and give any relevant advice. If the bool is false, suggest important changes the user should make.`;
+    For each category where the bool is true, Explain why they are doing good and give any relevant advice. If the bool is false, suggest important changes the user should make. The text should always be displayed the same.`;
 
     const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyAUff-DpCq92IKN8AnVm0wdyKMycKwOauk';
 
@@ -81,12 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (responseData && responseData.candidates && responseData.candidates.length > 0) {
       const generatedText = responseData.candidates[0].content.parts[0].text;
-      const output = document.getElementById('AiText');
-      const preElement = document.createElement('pre');
-      preElement.textContent = generatedText;
-      output.appendChild(preElement);
-    //   document.getElementById('AiText').textContent = generatedText;
-    //   console.log("Generated Text:", generatedText);
+      document.getElementById('AiText').textContent = generatedText;
+      console.log("Generated Text:", generatedText);
     } else {
       console.error("Error: Could not retrieve generated text.");
       document.getElementById('AiText').textContent = "Error: Could not retrieve generated text.";
