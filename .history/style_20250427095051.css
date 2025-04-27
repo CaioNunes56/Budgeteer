@@ -295,8 +295,6 @@ ul li{
   width: 100px;
 }
 
-#AiArea #total-budget {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+#AiArea #total-budget{
+    
 }

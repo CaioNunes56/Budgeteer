@@ -294,9 +294,3 @@ ul li{
 .DropdownContent #btn-logout:hover{
   width: 100px;
 }
-
-#AiArea #total-budget {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
