@@ -89,9 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }); 
 });
+const parsedDataDynamic = parseAIOutputDynamic(generatedText);
+console.log(parsedDataDynamic);
 
-function parseAIOutputDynamic(generatedText) {
-  const lines = generatedText.trim().split('\n');
+function parseAIOutputDynamic(output) {
+  const lines = outputt.trim().split('\n');
   const data = {};
   let currentCategory = null;
 
