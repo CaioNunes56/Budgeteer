@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Give me two financial advices about this budget (How can I lower my expenses (Do that only for the highest value category), how can I better balance everything out)`;
 
         const apiKey = 'AIzaSyCNCdj6NO7svW8gOwnJgjlTsz9DK1ZSzm0';
-        const apiURL = 'https://dialogflow.googleapis.com/v2/projects/200919958979/agent/sessions/session-001:detectIntent';
+        const apiURL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
     
         const dataSent = {
             contents: [{ parts: [{ text: stringToSend}] }]
