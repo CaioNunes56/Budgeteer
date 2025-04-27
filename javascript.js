@@ -1,4 +1,4 @@
-console.log("✅ javascript.js has been loaded!");
+console.log("javascript.js has been loaded!");
 
 let auth0Client = null;
 
@@ -10,11 +10,11 @@ async function configureClient() {
       redirect_uri: window.location.origin + window.location.pathname
     }
   });
-  console.log("✅ Auth0 client created");
+  console.log("Auth0 client created");
 }
 
 window.onload = async () => {
-  console.log("🌐 window.onload fired");
+  console.log("window.onload fired");
 
   // 1) Initialize the Auth0 client
   await configureClient();
@@ -22,12 +22,12 @@ window.onload = async () => {
   // 2) Handle the redirect callback (if we just came back from Auth0)
   const query = window.location.search;
   if (query.includes("code=") && query.includes("state=")) {
-    console.log("🔄 Processing login callback");
+    console.log("Processing login callback");
     try {
       const result = await auth0Client.handleRedirectCallback();
-      console.log("✅ Callback handled, appState:", result.appState);
+      console.log("Callback handled, appState:", result.appState);
     } catch (e) {
-      console.error("❌ Error handling callback:", e);
+      console.error(" Error handling callback:", e);
     }
     // Clean up the URL so users don’t see code & state params
     window.history.replaceState({}, document.title, window.location.pathname);
@@ -35,21 +35,21 @@ window.onload = async () => {
 
   // 3) Check if user is authenticated
   const isAuthenticated = await auth0Client.isAuthenticated();
-  console.log("🔑 isAuthenticated:", isAuthenticated);
+  console.log("isAuthenticated:", isAuthenticated);
 
   if (!isAuthenticated) {
     // 4) Not logged in → kick off the redirect to the Universal Login page
-    console.log("➡️ Redirecting to Auth0 login");
+    console.log("➡Redirecting to Auth0 login");
     await auth0Client.loginWithRedirect();
   } else {
-    console.log("🎉 User is authenticated — show your app now");
+    console.log(" User is authenticated — show your app now");
     // (You can now safely render protected UI)
   }
 };
 
 // (Optional) Call this when you want to log out:
 async function logout() {
-  console.log("🚪 Logging out");
+  console.log(" Logging out");
   await auth0Client.logout({
     logoutParams: {
       returnTo: window.location.origin + "/"
