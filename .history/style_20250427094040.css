@@ -69,7 +69,7 @@ header p {
 }
 
 .DropdownContent.show {
-    display: flex;           /* makes the container a flexbox for vertical alignment */
+    display: flex;           /* makes the container a flexbox for vertical alignment */ :contentReference[oaicite:1]{index=1}
     flex-direction: column;
     align-items: center;
 }

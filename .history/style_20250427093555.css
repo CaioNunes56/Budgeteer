@@ -69,7 +69,7 @@ header p {
 }
 
 .DropdownContent.show {
-    display: flex;           /* makes the container a flexbox for vertical alignment */
+    display: flex;           /* makes the container a flexbox for vertical alignment */ :contentReference[oaicite:1]{index=1}
     flex-direction: column;
     align-items: center;
 }
@@ -289,7 +289,4 @@ ul li{
     display: block;
     width: 100%;
     text-align: center;
-}
- .DropdownContent #btn-logout:hover{
-  width: 100px;
 }
