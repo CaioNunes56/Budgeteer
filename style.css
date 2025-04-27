@@ -270,3 +270,11 @@ button #addcategory{
     font-weight: bold;
     
 }
+
+ul li{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
