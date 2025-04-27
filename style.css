@@ -271,6 +271,14 @@ button #addcategory{
     
 }
 
+ul li{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
 #btn-logout {
     width: 100%;
 }
