@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     For each category, provide a bool value indicating if the user is managing his money well (true) or if it needs some improvement(false) (the value should be under the header)
     For each category where the bool is true, Explain why they are doing good and give any relevant advice. If the bool is false, suggest important changes the user should make.`;
 
-    const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=YOUR_API_KEY'; // Replace with your actual API key
+    const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyAUff-DpCq92IKN8AnVm0wdyKMycKwOauk'; 
 
     const dataSent = {
       "contents": [{ "parts": [{ "text": stringToSend}] }]
