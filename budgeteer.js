@@ -89,3 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }); 
 });
+
+function parseAIOutput(generatedText) {
+  const lines = output.trim().split('\n');
+  const data = {};
+  let currentCategory = null;
+
+  for (const line of lines) {
+    if (line.trim() === 'Total Budget') {
+      currentCategory = 'totalBudget';
+      data[currentCategory] = lines[lines.indexOf(line) + 1].trim();
+    } else if (['Housing', 'Groceries', 'Childcare', 'Dining Out', 'Savings', 'Health'].includes(line.trim())) {
+      currentCategory = line.trim().toLowerCase().replace(' ', '');
+      data[currentCategory] = {
+        wellManaged: lines[lines.indexOf(line) + 1].trim() === 'true',
+        advice: lines.slice(lines.indexOf(line) + 2).filter(l => l.trim() !== '' && !['true', 'false'].includes(l.trim())).join(' '),
+      };
+    }
+  }
+  return data;
+}
