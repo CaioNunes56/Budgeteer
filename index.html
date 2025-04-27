@@ -73,11 +73,11 @@
 <header>
         <img id="WebsiteIcon" src="https://raw.githubusercontent.com/CaioNunes56/Budgeteer/ade3921d2d359ee1edccd374c3fbb8b5b0d31e64/Icons/money-alt-svgrepo-com.svg">
         <h1>Budgeteer</h1>
-        <div class="ProfileDropdown">       
+        <div class="ProfileDropdown" id="profileDropdown">     
         <div id="ProfileText">
             <img id="UserIcon" src="https://raw.githubusercontent.com/CaioNunes56/Budgeteer/cb219e3e84efa07d88e2bbde3b8a9176fdb78453/Icons/detective-face-svgrepo-com%20(1).svg">
             <p id="Profile">Account ▾</p>
-            <div class="DropdownContent">
+            <div class="DropdownContent" id="dropdownMenu">
                 <a href="#" id="emailLink">Loading…</a>
                 <a href="#">Help</a>
                 <button id="btn-logout" onclick="logout()">Log Out</button>
@@ -144,6 +144,31 @@
 
             <button type="button" id="analyze">Analyze</button>
         </form>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const profileDropdown = document.getElementById('profileDropdown');
+              const menu            = document.getElementById('dropdownMenu');
+        
+              // Toggle menu on click of the ProfileText area
+              profileDropdown.querySelector('#ProfileText')
+                .addEventListener('click', e => {
+                  e.stopPropagation();
+                  menu.classList.toggle('show');
+                });
+        
+              // Clicking anywhere outside closes the menu
+              document.addEventListener('click', e => {
+                if (!e.target.closest('#profileDropdown')) {
+                  menu.classList.remove('show');
+                }
+              });
+            });
+        
+            // stub logout function
+            function logout() {
+              alert('Logging out…');
+            }
+        </script>
     </main>
     <div id="AiArea">
         <h2>Here's The Budgeteer's analysis:</h2>
