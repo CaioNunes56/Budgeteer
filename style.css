@@ -243,3 +243,9 @@ button #addcategory{
     background-color: #1C1C1C ;
     color: #F5F5F5;
 }
+
+.AiText {
+    display: block;
+    padding: 100px;
+    color: #000;
+}
