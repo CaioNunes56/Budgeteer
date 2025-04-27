@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const parsedData = parsedDataDynamic; // Or call parseAIOutputDynamic with your actual output
 
     if (parsedData.totalBudget) {
-    document.getElementById('total-budget').textContent = `Total: $${parsedData.totalBudget}`;
+    document.getElementById('total-budget').textContent = `Total: ${parsedData.totalBudget}`;
     }
 
     for (const category in parsedData) {
