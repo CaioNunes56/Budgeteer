@@ -284,7 +284,7 @@ ul li{
     text-align: center;
 }
 
-.DropdownContent #btn-logout {
+#btn-logout {
     display: block;
     width: 100%;
     text-align: center;
