@@ -83,14 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const generatedText = responseData.candidates[0].content.parts[0].text;
       document.getElementById('AiText').textContent = generatedText;
       console.log("Generated Text:", generatedText);
+
+      const parsedDataDynamic = parseAIOutputDynamic(generatedText);
+      console.log(parsedDataDynamic);
+      
     } else {
       console.error("Error: Could not retrieve generated text.");
       document.getElementById('AiText').textContent = "Error: Could not retrieve generated text.";
     }
   }); 
 });
-const parsedDataDynamic = parseAIOutputDynamic(generatedText);
-console.log(parsedDataDynamic);
 
 function parseAIOutputDynamic(output) {
   const lines = outputt.trim().split('\n');
