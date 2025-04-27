@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Joining of the Data to a predefined prompt
     let stringToSend = `I am currently using you as an API in my website. For everything I ask you to do from this point on, you willl not provide any comments, questions or steps in your calculations or thinking process: I simply want each answer separated by a header for each section, to make it easier for me to send each part to a different page in my website.
-    I will be using you to provide advice concerning budget allocation decisions. Please write everything in plain text, without using markdown. There will be values sent with extra options names and their values, include those as well.
+    I will be using you to provide advice concerning budget allocation decisions. Please write everything in plain text, without using markdown. There will be values sent with extra options names and their values, include those as well. If a value is 0 or null, assume it has no expenses in this field.
     Here is the logic I am using to parse the data:
     function parseAIOutputDynamic(output) {
     const lines = output.trim().split('\\n');
