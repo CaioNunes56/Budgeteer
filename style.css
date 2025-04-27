@@ -273,7 +273,14 @@ button #addcategory{
     padding: 10px;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
-    
+}
+
+#AiArea h3{
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
 }
 
 ul li{
@@ -284,6 +291,11 @@ ul li{
     text-align: center;
 }
 
+ul li *{
+    
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+}
 .DropdownContent #btn-logout {
     padding-bottom: 10px;
     display: block;
@@ -293,10 +305,4 @@ ul li{
 
 .DropdownContent #btn-logout:hover{
   width: 100px;
-}
-
-#AiArea #total-budget {
-    display: flex;
-    justify-content: center;
-    text-align: center;
 }
