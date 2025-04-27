@@ -13,13 +13,12 @@
     <script src="./javascript.js" defer></script>
     <script src="./budgeteer.js" defer></script>
 
-    <script>
-        // define a global function
+ <script>
         function handleAddCategory() {
           const categoriesDiv = document.getElementById('categories');
           // keep a counter in the button’s dataset
           const btn = document.getElementById('addCategory');
-          let count = parseInt(btn.dataset.count || '0', 10) + 1;
+          let count = parseInt(btn.dataset.count || '0', 10) + 1; // uses base 10 to count
           btn.dataset.count = count;
     
           // build the wrapper
@@ -29,7 +28,7 @@
     
           // name
           const nameLabel = document.createElement('label');
-          nameLabel.textContent = `Category ${count} Name: `;
+          nameLabel.textsContent = `Category ${count} Name: `;
           const nameInput = document.createElement('input');
           nameInput.type = 'text';
           nameInput.name = 'customCategoryName[]';
@@ -42,9 +41,22 @@
           amountInput.type = 'text';
           amountInput.name = 'customCategoryAmount[]';
           nameInput.placeholder = 'Category name';
+
+         // delete button
+            const deleteBtn = document.createElement('button');
+            deleteBtn.type = 'button';
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.style.marginLeft = '0.5em';
+            deleteBtn.addEventListener('click', () => {
+            wrapper.remove();
+            });
     
-          // assemble and append
-          wrapper.append(nameLabel, nameInput, amountLabel, amountInput);
+          wrapper.append(
+        nameLabel, nameInput,
+        amountLabel, amountInput,
+        deleteBtn
+        );
+          
           categoriesDiv.appendChild(wrapper);
         }
       </script>
@@ -104,11 +116,9 @@
             id="addCategory"
             data-count="0"
             onclick="handleAddCategory()"
-          >
+            >
             Add a category
-          </button>
-    
-          <div id="categories"></div>
+            </button>
 
             <button type="button" id="analyze">Analyze</button>
         </form>
