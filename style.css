@@ -8,7 +8,7 @@ body{
     padding: 0;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex: 1;
     height: 100%;
     
 }
@@ -22,17 +22,80 @@ body *{
 
 header{
     display: flex;
-    justify-content: center;;
+    justify-content:space-between;
     align-items: center;
     text-align: center;
-    padding: 40px 0;
+    padding-inline: 40px;
+    padding-block: 40px;
     background-color: #1C1C1C;
+      
+}
+
+header p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    transform: translate(-4px, 0);
+}
+
+.ProfileDropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.ProfileDropdown:hover #Profile{
+    color: green;
+}
+.ProfileDropdown:hover img{
+    filter: invert(53%) sepia(29%) saturate(4426%) hue-rotate(84deg) brightness(100%) contrast(94%);
+}
+.DropdownContent {   
+    display: none;
+    position: absolute;
+    transform: translate(-30%, 2%);
+    background-color: #2E2E2E;
+    border-radius: 10px;
+    border: 2px solid #4CAF50;
+    width: 200%
     
+}
+
+.DropdownContent a {
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+    
+}
+
+.ProfileDropdown:hover .DropdownContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.ProfileDropdown:hover button{
+   
+   margin-top: 0px;
     
 }
 
 #UserIcon {
     height: 35px;
+    padding-right: 10px;
+    transform: translate(-20%, 2%);
+}
+
+#WebsiteIcon{
+    height: 55px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.ProfileDropdown {
+
+    align-items: center;
+    
+    
 }
 h1{
     font-family: 'Courier New', Courier, monospace;
@@ -179,4 +242,25 @@ button #addcategory{
     display:block; 
     background-color: #1C1C1C ;
     color: #F5F5F5;
+}
+
+#AiText {
+    display: block;
+    padding: 100px;
+    color: #000;
+}
+
+#AiArea {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+}
+
+#AiArea h2{
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    
 }
