@@ -52,8 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(budgetData);
 
     //Joining of the Data to a predefined prompt
-    let stringToSend = `What is the total when all the values in this budget: ${JSON.stringify(budgetData)} are added up to each other?
-        Give me two financial advices about this budget (How can I lower my expenses (Do that only for the highest value category), how can I better balance everything out)`;
+    let stringToSend = `I am currently using you as an API in my website. For everything I ask you to do from this point on, you willl not provide any comments, questions or steps in your calculations or thinking process: I simply want each answer separated by a header for each section, to make it easier for me to send each part to a different page in my website.
+    I will be using you to provide advice concerning budget allocation decisions. Here are the questions:
+    What is the total for all the values in this budget: ${JSON.stringify(budgetData)}?
+    For each category, provide a bool value indicating if the user is managing his money well (true) or if it needs some improvement(false) (the value should be under the header)
+    For each category where the bool is true, Explain why they are doing good and give any relevant advice. If the bool is false, suggest important changes the user should make.`;
 
     const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyD48msYI5xDeKxlPKSrwBMtpkaRIZH77IM';
 
@@ -86,3 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }); 
 });
+
+function parseAIOutput(generatedText) {
+  const lines = output.trim().split('\n');
+  const data = {};
+  let currentCategory = null;
+
+  for (const line of lines) {
+    if (line.trim() === 'Total Budget') {
+      currentCategory = 'totalBudget';
+      data[currentCategory] = lines[lines.indexOf(line) + 1].trim();
+    } else if (['Housing', 'Groceries', 'Childcare', 'Dining Out', 'Savings', 'Health'].includes(line.trim())) {
+      currentCategory = line.trim().toLowerCase().replace(' ', '');
+      data[currentCategory] = {
+        wellManaged: lines[lines.indexOf(line) + 1].trim() === 'true',
+        advice: lines.slice(lines.indexOf(line) + 2).filter(l => l.trim() !== '' && !['true', 'false'].includes(l.trim())).join(' '),
+      };
+    }
+  }
+  return data;
+}
