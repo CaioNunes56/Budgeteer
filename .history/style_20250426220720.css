@@ -70,20 +70,13 @@ input[type="number"] {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1em;
     transition: border-color 0.3s, box-shadow 0.3s;
-    
+    -moz-appearance: textfield;
 }
 
 input[type="number"]:focus {
     border-color: #4CAF50;
     box-shadow: 0 0 5px #4CAF50;
     outline: none;
-}
-
-/* Hide number input spinners - Chrome, Safari, Edge, Opera */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
 }
 
 /*Text input styling*/
