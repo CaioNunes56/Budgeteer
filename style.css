@@ -291,7 +291,7 @@ ul li{
     text-align: center;
 }
 
-ul li p{
+ul li *{
     
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
