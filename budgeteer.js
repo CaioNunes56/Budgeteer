@@ -27,40 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
         Give me two financial advices about this budget (How can I lower my expenses (Do that only for the highest value category), how can I better balance everything out)`;
 
 
-        const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyD48msYI5xDeKxlPKSrwBMtpkaRIZH77IM';
+        const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=YOUR_API_KEY'; // Replace with your actual key
+
         const dataSent = {
-            "contents": [{ "parts": [{ "text": stringToSend}] }]
+        "contents": [{ "parts": [{ "text": stringToSend}] }]
         };
+
 
         const listModelsURL = 'https://generativelanguage.googleapis.com/v1/models?key=AIzaSyD48msYI5xDeKxlPKSrwBMtpkaRIZH77IM';
 
-async function listAvailableModels() {
-  try {
-    const response = await fetch(listModelsURL);
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error(`Error listing models: ${response.status}`, errorData);
-      return;
-    }
-    const data = await response.json();
-    console.log("Available Models:", data.models);
-  } catch (error) {
-    console.error("Error fetching model list:", error);
-  }
-}
 
-listAvailableModels();
 
         const jsonstring = JSON.stringify(dataSent)
 
         const answer = await fetch(apiURL, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-            },
-            
-            body: jsonstring
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataSent)
         });
+
 
         const responseData = await answer.json();
         console.log(responseData);
