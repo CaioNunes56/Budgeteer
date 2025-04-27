@@ -51,5 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const responseData = await answer.json();
         console.log(responseData);
+
+         if (responseData && responseData.candidates && responseData.candidates.length > 0) {
+    const generatedText = responseData.candidates[0].content.parts[0].text;
+    document.getElementById('AiText').textContent = generatedText;
+    console.log("Generated Text:", generatedText);
+  } else {
+    console.error("Error: Could not retrieve generated text.");
+    document.getElementById('AiText').textContent = "Error: Could not retrieve generated text.";
     })
 })
