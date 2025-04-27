@@ -6,8 +6,9 @@
     <title>Budgeteer</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    
+    <!--
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script> 
+-->
     
     <script src="./javascript.js" defer></script>
     <script src="./budgeteer.js" defer></script>
@@ -31,9 +32,6 @@
           nameInput.type = 'text';
           nameInput.name = 'customCategoryName[]';
           nameInput.placeholder = 'Category name';
-
-          //jimmy change
-          nameInput.className = 'extraCategoryName';
     
           // amount
           const amountLabel = document.createElement('label');
@@ -41,11 +39,7 @@
           const amountInput = document.createElement('input');
           amountInput.type = 'number';
           amountInput.name = 'customCategoryAmount[]';
-          amountInput.placeholder = 'Category amount';
-
-          //jimmy change
-          amountInput.className = 'extraCategoryValue';
-          
+          nameInput.placeholder = 'Category name';
 
          // delete button
             const deleteBtn = document.createElement('button');
@@ -69,22 +63,9 @@
 </head>
 
 <body>
-    
-<header>
-        <img id="WebsiteIcon" src="https://raw.githubusercontent.com/CaioNunes56/Budgeteer/ade3921d2d359ee1edccd374c3fbb8b5b0d31e64/Icons/money-alt-svgrepo-com.svg">
+    <header>
         <h1>Budgeteer</h1>
-        <div class="ProfileDropdown">       
-        <div id="ProfileText">
-            <img id="UserIcon" src="https://raw.githubusercontent.com/CaioNunes56/Budgeteer/cb219e3e84efa07d88e2bbde3b8a9176fdb78453/Icons/detective-face-svgrepo-com%20(1).svg">
-            <p id="Profile">Account ▾</p>
-            <div class="DropdownContent">
-                <a href="#" id="emailLink">Loading…</a>
-                <a href="#">Help</a>
-                <button id="btn-logout" onclick="logout()">Log Out</button>
-            </div>           
-        </div>
-        
-        </div>  
+        <img id="UserIcon" src="https://raw.githubusercontent.com/CaioNunes56/Budgeteer/75479cce972b298faeb0a9022346adf80b4986b4/Icons/user-svgrepo-com%20(2).svg" alt="User Icon">
     </header>
     <main>
         <form class="basic">
@@ -144,10 +125,7 @@
 
             <button type="button" id="analyze">Analyze</button>
         </form>
+        <div class="output"></div>
     </main>
-    <div id="AiArea">
-        <h2>Here's The Budgeteer's analysis:</h2>
-        <div id="AiText"></div>
-    </div>
 </body>
 </html>

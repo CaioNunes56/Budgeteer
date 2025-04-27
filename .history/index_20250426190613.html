@@ -6,17 +6,19 @@
     <title>Budgeteer</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    
+    <!--
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script> 
+-->
     
     <script src="./javascript.js" defer></script>
     <script src="./budgeteer.js" defer></script>
+
     <script>
         function handleAddCategory() {
           const categoriesDiv = document.getElementById('categories');
           // keep a counter in the button’s dataset
           const btn = document.getElementById('addCategory');
-          let count = parseInt(btn.dataset.count || '0', 10) + 1; // uses base 10 to count
+          let count = parseInt(btn.dataset.count || '0', 10) + 1;
           btn.dataset.count = count;
     
           // build the wrapper
@@ -26,42 +28,32 @@
     
           // name
           const nameLabel = document.createElement('label');
-          nameLabel.textsContent = `Category ${count} Name: `;
+          nameLabel.textContent = `Category ${count} Name: `;
           const nameInput = document.createElement('input');
           nameInput.type = 'text';
           nameInput.name = 'customCategoryName[]';
           nameInput.placeholder = 'Category name';
-
-          //jimmy change
-          nameInput.className = 'extraCategoryName';
     
           // amount
           const amountLabel = document.createElement('label');
           amountLabel.textContent = ` Amount Spent (USD): `;
           const amountInput = document.createElement('input');
-          amountInput.type = 'number';
+          amountInput.type = 'text';
           amountInput.name = 'customCategoryAmount[]';
-          amountInput.placeholder = 'Category amount';
+          nameInput.placeholder = 'Category name';
 
-          //jimmy change
-          amountInput.className = 'extraCategoryValue';
-          
-
-         // delete button
-            const deleteBtn = document.createElement('button');
-            deleteBtn.type = 'button';
-            deleteBtn.textContent = 'Delete';
-            deleteBtn.style.marginLeft = '0.5em';
-            deleteBtn.addEventListener('click', () => {
-            wrapper.remove();
-            });
+              // delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.type = 'button';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.style.marginLeft = '0.5em';
+        deleteBtn.addEventListener('click', () => {
+        wrapper.remove();
+        // optional: re-number remaining categories if you like
+        });
     
-          wrapper.append(
-        nameLabel, nameInput,
-        amountLabel, amountInput,
-        deleteBtn
-        );
-          
+          // assemble and append
+          wrapper.append(nameLabel, nameInput, amountLabel, amountInput);
           categoriesDiv.appendChild(wrapper);
         }
       </script>
@@ -69,22 +61,8 @@
 </head>
 
 <body>
-    
-<header>
-        <img id="WebsiteIcon" src="https://raw.githubusercontent.com/CaioNunes56/Budgeteer/ade3921d2d359ee1edccd374c3fbb8b5b0d31e64/Icons/money-alt-svgrepo-com.svg">
+    <header>
         <h1>Budgeteer</h1>
-        <div class="ProfileDropdown">       
-        <div id="ProfileText">
-            <img id="UserIcon" src="https://raw.githubusercontent.com/CaioNunes56/Budgeteer/cb219e3e84efa07d88e2bbde3b8a9176fdb78453/Icons/detective-face-svgrepo-com%20(1).svg">
-            <p id="Profile">Account ▾</p>
-            <div class="DropdownContent">
-                <a href="#" id="emailLink">Loading…</a>
-                <a href="#">Help</a>
-                <button id="btn-logout" onclick="logout()">Log Out</button>
-            </div>           
-        </div>
-        
-        </div>  
     </header>
     <main>
         <form class="basic">
@@ -97,57 +75,55 @@
 
             <label for="income">
                 Monthly income (USD)
-                <input type="number" id="income" placeholder="Monthly income in USD">
+                <input type="text" id="income" placeholder="Monthly income in USD">
             </label>
-            
 
             <label for="housing">
                 Monthly spending for housing (USD)
-                <input type="number" id="housing" placeholder="Monthly spending for housing">
+                <input type="text" id="housing" placeholder="Monthly spending for housing">
             </label>
 
             <label for="groceries">
                 Monthly spending for groceries (USD)
-                <input type="number" id="groceries" placeholder="Monthly spending for groceries">
+                <input type="text" id="groceries" placeholder="Monthly spending for groceries">
             </label>
 
             <label for="childcare">
                 Monthly spending for childcare (USD)
-                <input type="number" id="childcare" placeholder="Monthly spending for childcare">
+                <input type="text" id="childcare" placeholder="Monthly spending for childcare">
             </label>
 
             <label for="diningOut">
                 Monthly spending for dining out (USD)
-                <input type="number" id="diningOut" placeholder="Monthly spending for groceries">
+                <input type="text" id="diningOut" placeholder="Monthly spending for groceries">
             </label>
 
             <label for="savings">
                 Monthly spending for personal savings (USD)
-                <input type="number" id="savings" placeholder="Monthly spending for savings">
+                <input type="text" id="savings" placeholder="Monthly spending for savings">
             </label>
 
             <label for="health">
                 Monthly spending for personal health (USD)
-                <input type="number" id="health" placeholder="Monthly spending for health (gym, medecine, etc.)">
+                <input type="text" id="health" placeholder="Monthly spending for health (gym, medecine, etc.)">
             </label>
 
-            <div id="categories"></div>
-
-            <button
+            <div class="newcategories">
+            </div>
+                <button
             type="button"
             id="addCategory"
             data-count="0"
             onclick="handleAddCategory()"
-            >
+          >
             Add a category
-            </button>
+          </button>
+            </div>
+            
 
             <button type="button" id="analyze">Analyze</button>
         </form>
+        <div class="output"></div>
     </main>
-    <div id="AiArea">
-        <h2>Here's The Budgeteer's analysis:</h2>
-        <div id="AiText"></div>
-    </div>
 </body>
 </html>
