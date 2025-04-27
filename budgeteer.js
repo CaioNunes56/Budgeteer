@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyCNCdj6NO7svW8gOwnJgjlTsz9DK1ZSzm0';
     
         const dataSent = {
-            contents: [{ parts: [{ text: stringToSend}] }]
+            "contents": [{ "parts": [{ "text": stringToSend}] }]
         };
 
         const answer = await fetch(apiURL, {
@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { 
                 'Content-Type': 'application/json',
             },
+
+            
             body: JSON.stringify(dataSent)
         });
 
