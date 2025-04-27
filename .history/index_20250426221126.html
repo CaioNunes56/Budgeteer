@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeteer</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <!--
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script> 
+-->
+    
+    <script src="./javascript.js" defer></script>
+    <script src="./budgeteer.js" defer></script>
+    <script>
+        function handleAddCategory() {
+          const categoriesDiv = document.getElementById('categories');
+          // keep a counter in the button’s dataset
+          const btn = document.getElementById('addCategory');
+          let count = parseInt(btn.dataset.count || '0', 10) + 1; // uses base 10 to count
+          btn.dataset.count = count;
+    
+          // build the wrapper
+          const wrapper = document.createElement('div');
+          wrapper.className = 'category-wrapper';
+          wrapper.style.marginTop = '1em';
+    
+          // name
+          const nameLabel = document.createElement('label');
+          nameLabel.textsContent = `Category ${count} Name: `;
+          const nameInput = document.createElement('input');
+          nameInput.type = 'text';
+          nameInput.name = 'customCategoryName[]';
+          nameInput.placeholder = 'Category name';
+    
+          // amount
+          const amountLabel = document.createElement('label');
+          amountLabel.textContent = ` Amount Spent (USD): `;
+          const amountInput = document.createElement('input');
+          amountInput.type = 'text';
+          amountInput.name = 'customCategoryAmount[]';
+          nameInput.placeholder = 'Category name';
+
+         // delete button
+            const deleteBtn = document.createElement('button');
+            deleteBtn.type = 'button';
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.style.marginLeft = '0.5em';
+            deleteBtn.addEventListener('click', () => {
+            wrapper.remove();
+            });
+    
+          wrapper.append(
+        nameLabel, nameInput,
+        amountLabel, amountInput,
+        deleteBtn
+        );
+          
+          categoriesDiv.appendChild(wrapper);
+        }
+      </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Budgeteer</h1>
+        <img id="UserIcon" src="https://raw.githubusercontent.com/CaioNunes56/Budgeteer/75479cce972b298faeb0a9022346adf80b4986b4/Icons/user-svgrepo-com%20(2).svg" alt="User Icon">
+    </header>
+    <main>
+        <form class="basic">
+            If you have no spending in a certain category, simply leave it blank. 
+            <label class="customCheck">
+                This is a family budget
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <label for="income">
+                Monthly income (USD)
+                <input type="number" id="income" placeholder="Monthly income in USD">
+            </label>
+            
+
+            <label for="housing">
+                Monthly spending for housing (USD)
+                <input type="text" id="housing" placeholder="Monthly spending for housing">
+            </label>
+
+            <label for="groceries">
+                Monthly spending for groceries (USD)
+                <input type="text" id="groceries" placeholder="Monthly spending for groceries">
+            </label>
+
+            <label for="childcare">
+                Monthly spending for childcare (USD)
+                <input type="text" id="childcare" placeholder="Monthly spending for childcare">
+            </label>
+
+            <label for="diningOut">
+                Monthly spending for dining out (USD)
+                <input type="text" id="diningOut" placeholder="Monthly spending for groceries">
+            </label>
+
+            <label for="savings">
+                Monthly spending for personal savings (USD)
+                <input type="text" id="savings" placeholder="Monthly spending for savings">
+            </label>
+
+            <label for="health">
+                Monthly spending for personal health (USD)
+                <input type="text" id="health" placeholder="Monthly spending for health (gym, medecine, etc.)">
+            </label>
+
+            <div id="categories"></div>
+
+            <button
+            type="button"
+            id="addCategory"
+            data-count="0"
+            onclick="handleAddCategory()"
+            >
+            Add a category
+            </button>
+
+            <button type="button" id="analyze">Analyze</button>
+        </form>
+        <div class="output"></div>
+    </main>
+</body>
+</html>
