@@ -90,21 +90,43 @@ document.addEventListener('DOMContentLoaded', () => {
   }); 
 });
 
-function parseAIOutput(generatedText) {
-  const lines = output.trim().split('\n');
+function parseAIOutputDynamic(generatedText) {
+  const lines = generatedText.trim().split('\n');
   const data = {};
   let currentCategory = null;
 
-  for (const line of lines) {
-    if (line.trim() === 'Total Budget') {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+
+    if (line === 'Total Budget') {
       currentCategory = 'totalBudget';
-      data[currentCategory] = lines[lines.indexOf(line) + 1].trim();
-    } else if (['Housing', 'Groceries', 'Childcare', 'Dining Out', 'Savings', 'Health'].includes(line.trim())) {
-      currentCategory = line.trim().toLowerCase().replace(' ', '');
-      data[currentCategory] = {
-        wellManaged: lines[lines.indexOf(line) + 1].trim() === 'true',
-        advice: lines.slice(lines.indexOf(line) + 2).filter(l => l.trim() !== '' && !['true', 'false'].includes(l.trim())).join(' '),
-      };
+      data[currentCategory] = lines[i + 1]?.trim();
+      i++; // Skip the next line as it's the value
+    } else if (line && line !== 'true' && line !== 'false' && line !== 'Total Budget') {
+      // Assume this line is a category header
+      currentCategory = line.toLowerCase().replace(' ', '');
+      data[currentCategory] = {};
+
+      // Check for "well managed" status on the next line
+      const wellManagedStr = lines[i + 1]?.trim();
+      if (wellManagedStr === 'true' || wellManagedStr === 'false') {
+        data[currentCategory].wellManaged = wellManagedStr === 'true';
+        i++; // Skip the "true"/"false" line
+      }
+
+      // Extract advice until the next category-like line or end
+      const adviceLines = [];
+      for (let j = i + 1; j < lines.length; j++) {
+        const nextLine = lines[j].trim();
+        if (nextLine && nextLine !== 'true' && nextLine !== 'false' && nextLine !== 'Total Budget') {
+          // Heuristic: If the line is not a boolean or "Total Budget", consider it advice
+          adviceLines.push(nextLine);
+        } else {
+          break; // Stop if we encounter something that looks like a new category or status
+        }
+      }
+      data[currentCategory].advice = adviceLines.join(' ');
+      i += adviceLines.length; // Skip the advice lines
     }
   }
   return data;
