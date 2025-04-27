@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         budgetData['savings'] = parseFloat(savingsAmount.value);
         budgetData['health'] = parseFloat(healthcareAmount.value);
 
-        const stringToSend = `What is the total when all the values in this budget: ${JSON.stringify(budgetData)} are added up to each other?
+        let stringToSend = `What is the total when all the values in this budget: ${JSON.stringify(budgetData)} are added up to each other?
         Give me two financial advices about this budget (How can I lower my expenses (Do that only for the highest value category), how can I better balance everything out)`;
 
+
+        stringToSend = "What is the hostory of the world";
         const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyCNCdj6NO7svW8gOwnJgjlTsz9DK1ZSzm0';
         const x = 1;
         const dataSent = {
