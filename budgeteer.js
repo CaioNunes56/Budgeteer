@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (responseData && responseData.candidates && responseData.candidates.length > 0) {
         const generatedText = responseData.candidates[0].content.parts[0].text;       
         console.log("Generated Text:", generatedText);
-        document.GetElementById("AiText").textContent = generatedText;
+        document.getElementById("AiText").textContent = generatedText;
 
         const parsedDataDynamic = parseAIOutputDynamic(generatedText);
         console.log(parsedDataDynamic);
