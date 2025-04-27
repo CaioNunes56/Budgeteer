@@ -244,7 +244,7 @@ button #addcategory{
     color: #F5F5F5;
 }
 
-.AiText {
+#AiText {
     display: block;
     padding: 100px;
     color: #000;
