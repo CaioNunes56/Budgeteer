@@ -68,16 +68,21 @@ header p {
     
 }
 
-.ProfileDropdown:hover .DropdownContent{
-    display: flex;
+.DropdownContent.show {
+    display: flex;           /* makes the container a flexbox for vertical alignment */ :contentReference[oaicite:1]{index=1}
     flex-direction: column;
     align-items: center;
-    
 }
+
 .ProfileDropdown:hover button{
    
    margin-top: 0px;
     
+}
+.ProfileDropdown button{
+   
+    margin-top: 0px;
+     
 }
 
 #UserIcon {
