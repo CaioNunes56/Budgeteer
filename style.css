@@ -249,3 +249,18 @@ button #addcategory{
     padding: 100px;
     color: #000;
 }
+
+#AiArea {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+}
+
+#AiArea h2{
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    
+}
