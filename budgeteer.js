@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Joining of the Data to a predefined prompt
     let stringToSend = `I am currently using you as an API in my website. For everything I ask you to do from this point on, you willl not provide any comments, questions or steps in your calculations or thinking process: I simply want each answer separated by a header for each section, to make it easier for me to send each part to a different page in my website.
-    I will be using you to provide advice concerning budget allocation decisions. Here are the questions:
+    I will be using you to provide advice concerning budget allocation decisions. Please write everything in plain text, without using markdown. There will be values sent with extra options names and their values, include those as well. Here are the questions:
     What is the total for all the values in this budget: ${JSON.stringify(budgetData)}?
     For each category, provide a bool value indicating if the user is managing his money well (true) or if it needs some improvement(false) (the value should be under the header)
     For each category where the bool is true, Explain why they are doing good and give any relevant advice. If the bool is false, suggest important changes the user should make.`;
