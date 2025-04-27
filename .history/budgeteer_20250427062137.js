@@ -17,13 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const healthcareAmount = document.getElementById('health');
     
     //jimmy code
-    //This should make 2 parallel arrays: one for the extra category names, and one for the extra category values 
-    //Since the name and value classes are created at the same time, they should always have an equal amount of indexes
-    //Just in case, we'll run retrieval in a try catch.
-
-    //const extraAmountNames = document.GetElementsByClassName(extra category name class)
-    //const extraAmounts = document.GetElementsByClassName(extra category value class)
-   
+    //This should make an array to which
+    //const additionalAmounts = document.getElementsByClassName(additional category name class) + document.GetElementsByClassName(additional category name)
 
 
     budgetData['housing'] = parseFloat(housingAmount.value);
@@ -35,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //jimmy code
     /* for (int i = 0; i < additionalAmounts.length; i++){
-    budgetData['extraAmountNames'] = extraAmountNames.value;
-    budgetdata['extraAmounts'] = parseFloat(extraAmounts.value); 
+    budgetData['extras']= parse
     }
      */
 
