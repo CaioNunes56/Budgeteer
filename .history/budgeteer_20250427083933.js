@@ -156,8 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const preElement = document.createElement('pre');
       preElement.textContent = generatedText;
       output.appendChild(preElement);
-    //document.getElementById('AiText').textContent = generatedText;
-      console.log("Generated Text:", generatedText);
+    //   document.getElementById('AiText').textContent = generatedText;
+    //   console.log("Generated Text:", generatedText);
     } else {
       console.error("Error: Could not retrieve generated text.");
       document.getElementById('AiText').textContent = "Error: Could not retrieve generated text.";
