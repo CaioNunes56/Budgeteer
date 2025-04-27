@@ -79,6 +79,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const responseData = await answer.json();
     console.log(responseData);
 
+    document.addEventListener('DOMContentLoaded', () => {
+    const parsedData = parsedDataDynamic; // Or call parseAIOutputDynamic with your actual output
+
+    if (parsedData.totalBudget) {
+    document.getElementById('total-budget').textContent = `Total: $${parsedData.totalBudget}`;
+    }
+
+    for (const category in parsedData) {
+    if (category !== 'totalBudget') {
+      const managedElement = document.getElementById(`${category}-managed`);
+      const adviceElement = document.getElementById(`${category}-advice`);
+
+      if (managedElement) {
+        managedElement.textContent = parsedData[category].wellManaged ? 'Well Managed' : 'Needs Improvement';
+      }
+      if (adviceElement) {
+        adviceElement.advice = parsedData[category].advice;
+      }
+    }
+  }
+});
+
     if (responseData && responseData.candidates && responseData.candidates.length > 0) {
       const generatedText = responseData.candidates[0].content.parts[0].text;
       document.getElementById('AiText').textContent = generatedText;
