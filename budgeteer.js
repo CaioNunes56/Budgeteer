@@ -32,14 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
             "contents": [{ "parts": [{ "text": stringToSend}] }]
         };
 
+        const jsnostring = JSON.stringify(dataSent)
+
         const answer = await fetch(apiURL, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
             },
-
             
-            body: JSON.stringify(dataSent)
+            body: jsonstring
         });
 
         const responseData = await answer.json();
