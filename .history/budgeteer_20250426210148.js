@@ -42,5 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const responseData = await answer.json();
         console.log(responseData);
+        console.log(responseData.candidates[0].content.parts[0].text);
     })
 })

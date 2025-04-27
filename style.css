@@ -10,12 +10,14 @@ body{
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
+    
 }
 
 body *{
     margin: 0;
     padding: 0;
     color: #F5F5F5;
+    
 }
 
 header{
@@ -27,6 +29,10 @@ header{
     background-color: #1C1C1C;
     
     
+}
+
+#UserIcon {
+    height: 35px;
 }
 h1{
     font-family: 'Courier New', Courier, monospace;
@@ -45,11 +51,13 @@ main{
     background-color: #2E2E2E;
     color: #F5F5F5;
     font-family: 'IBM Plex Mono', monospace;
-    padding: 40px;
+    
+    
 }
 
 main form{
     max-width: 700px;
+    
 }
 
 /*Custom form styles*/
