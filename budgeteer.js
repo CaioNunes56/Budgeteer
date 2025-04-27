@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const extraAmountNames = document.getElementsByClassName('extraCategoryName');
       const extraAmounts = document.getElementsByClassName('extraCategoryValue');
 
-      budgetData['extraCategoryNames'] = [];
+      budgetData['extraAmountNames'] = [];
       budgetData['extraAmounts'] = [];
 
       for (let i = 0; i < extraAmounts.length; i++) {
