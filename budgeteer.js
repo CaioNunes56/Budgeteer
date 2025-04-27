@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Give me two financial advices about this budget (How can I lower my expenses (Do that only for the highest value category), how can I better balance everything out)`;
 
 
-        const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=AIzaSyD48msYI5xDeKxlPKSrwBMtpkaRIZH77IM'; 
+        const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyD48msYI5xDeKxlPKSrwBMtpkaRIZH77IM'; 
 
         const dataSent = {
         "contents": [{ "parts": [{ "text": stringToSend}] }]
