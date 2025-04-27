@@ -28,8 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         stringToSend = "What is the hostory of the world";
-        const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyCNCdj6NO7svW8gOwnJgjlTsz9DK1ZSzm0';
-        const x = 1;
+        const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyD48msYI5xDeKxlPKSrwBMtpkaRIZH77IM';
         const dataSent = {
             "contents": [{ "parts": [{ "text": stringToSend}] }]
         };
