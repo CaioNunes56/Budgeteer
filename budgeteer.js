@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let stringToSend = `What is the total when all the values in this budget: ${JSON.stringify(budgetData)} are added up to each other?
         Give me two financial advices about this budget (How can I lower my expenses (Do that only for the highest value category), how can I better balance everything out)`;
 
-    const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyD48msYI5xDeKxlPKSrwBMtpkaRIZH77IM';
+    const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyAUff-DpCq92IKN8AnVm0wdyKMycKwOauk';
 
     const dataSent = {
       "contents": [{ "parts": [{ "text": stringToSend}] }]
     };
 
-    const listModelsURL = 'https://generativelanguage.googleapis.com/v1/models?key=AIzaSyD48msYI5xDeKxlPKSrwBMtpkaRIZH77IM';
+    const listModelsURL = 'https://generativelanguage.googleapis.com/v1/models?key=AIzaSyAUff-DpCq92IKN8AnVm0wdyKMycKwOauk';
 
     const jsonstring = JSON.stringify(dataSent);
 
