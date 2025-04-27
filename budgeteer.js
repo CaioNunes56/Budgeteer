@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const responseData = await answer.json();
     console.log(responseData);
 
-    document.addEventListener('DOMContentLoaded', () => {
+    
     const parsedData = parsedDataDynamic; // Or call parseAIOutputDynamic with your actual output
 
     if (parsedData.totalBudget) {
@@ -157,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('AiText').textContent = "Error: Could not retrieve generated text.";
     }
   }); 
-});
 
 function parseAIOutputDynamic(output) {
   const lines = output.trim().split('\n');
