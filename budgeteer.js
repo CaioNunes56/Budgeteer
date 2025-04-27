@@ -50,13 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Joining of the Data to a predefined prompt
     let stringToSend = `I am currently using you as an API in my website. For everything I ask you to do from this point on, you willl not provide any comments, questions or steps in your calculations or thinking process: I simply want each answer separated by a header for each section, to make it easier for me to send each part to a different page in my website.
-    I will be using you to provide advice concerning budget allocation decisions. Please write everything in plain text, without using markdown. There will be values sent with extra options names and their values, include those as well. If a value is 0 or null, assume it has no expenses in this field.
-    provide a hard coded html break tag so it breaks in my website, add the tag in appropriate places and incude a colon after total and a $ sign after the amount.
+    I will be using you to provide advice concerning budget allocation decisions. Please write everything in plain text, without using markdown. There will be values sent with extra options names and their values, include those as well.  Use HTML break tags (<br>) for line breaks in the output.
     Here are the questions:
     What is the total for all the values in this budget: <br>Total: $${JSON.stringify(budgetData)}<br>
     For each category, Explain why they are doing good (or bad) and give any relevant advice. <br><br>If they are dong bad, suggest important changes the user should make.`;
 
-    const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyAUff-DpCq92IKN8AnVm0wdyKMycKwOauk'; // Replace with your actual API key
+    const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyAUff-DpCq92IKN8AnVm0wdyKMycKwOauk'; 
 
     const dataSent = {
       "contents": [{ "parts": [{ "text": stringToSend}] }]
@@ -84,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (responseData && responseData.candidates && responseData.candidates.length > 0) {
         const generatedText = responseData.candidates[0].content.parts[0].text;
-        document.getElementById('AiText').textContent = generatedText;
+        document.getElementById('AiText').innerHTML = generatedText;
         console.log("Generated Text:", generatedText);
 
 
