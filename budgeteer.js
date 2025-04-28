@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     What is the total for all the values in this budget: <br>Total: $${JSON.stringify(budgetData)}<br>
     For each category, Explain why they are doing good (or bad) and give any relevant advice. <br><br>If they are dong bad, suggest important changes the user should make.`;
 
-    const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=AIzaSyAUff-DpCq92IKN8AnVm0wdyKMycKwOauk'; 
+    const apiURL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-001:generateContent?key=APIKEYDISABLED'; 
 
     const dataSent = {
       "contents": [{ "parts": [{ "text": stringToSend}] }]
